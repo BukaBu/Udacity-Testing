@@ -77,9 +77,11 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+         const menu = document.getElementsByClassName('menu-hidden');
+
 
          it(' element is hidden by default', function () {
-
+            expect(menu.length).toBe(1);
            //true zeby bylo ze hidden menu klasa jest ukryta ze jest true
            //i wtedy sprawdzic expect czy menu jest true cos w tym stylu
          });
@@ -93,6 +95,12 @@ $(function() {
           */
 
           it(' changes visibility', function () {
+            const menuIcon = document.querySelector('.menu-icon-link');
+
+            menuIcon.click();
+            expect(menu.length).toBe(0);
+            menuIcon.click();
+            expect(menu.length).toBe(1);
 
 
           });
