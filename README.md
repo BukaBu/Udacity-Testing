@@ -1,6 +1,6 @@
 # Project Overview
 
-The main goal of the project was to use [Jasmine] (https://jasmine.github.io/) framework to write tests for existing Feed Reader application.
+The main goal of the project was to use Jasmine (https://jasmine.github.io/) framework to write tests for existing Feed Reader application.
 
 
 ## Written tests
@@ -18,7 +18,7 @@ The main goal of the project was to use [Jasmine] (https://jasmine.github.io/) f
 
 ### Initial entries
 
-* have at least one feed in the container
+* have at least one entry in the feed container
 
 ### New Feed Selection
 
@@ -27,4 +27,3 @@ The main goal of the project was to use [Jasmine] (https://jasmine.github.io/) f
 ## Running instructions
 
 * Download or clone the repository and open index.html file in your browser.
-* or see the live version https://bukabu.github.io/Udacity-Testing/

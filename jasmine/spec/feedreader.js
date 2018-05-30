@@ -25,7 +25,7 @@ $(function () {
 
             allFeeds.forEach(function (feed) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toBe(0);
+                expect(feed.url.length).not.toBe(0);
             });
 
         });
@@ -38,7 +38,7 @@ $(function () {
 
            allFeeds.forEach(function (feed) {
                expect(feed.name).toBeDefined();
-               expect(feed.name).not.toBe(0);
+               expect(feed.name.length).not.toBe(0);
             });
          });
     });
@@ -50,11 +50,11 @@ $(function () {
         /* a test that ensures the menu element is
          * hidden by default.
           */
-        const menu = document.getElementsByClassName('menu-hidden');
+        const menu = document.getElementsByTagName('body')[0];
 
 
         it(' element is hidden by default', function () {
-            expect(menu.length).toBe(1);
+            expect(menu.classList.contains('menu-hidden')).toBe(true);
 
         });
 
@@ -65,12 +65,11 @@ $(function () {
           */
 
         it(' changes visibility', function () {
-            const menuIcon = document.querySelector('.menu-icon-link');
-
-            menuIcon.click();
-            expect(menu.length).toBe(0);
-            menuIcon.click();
-           expect(menu.length).toBe(1);
+          const menuIcon = document.querySelector('.menu-icon-link');
+          menuIcon.click();
+          expect(menu.classList.contains('menu-hidden')).toBe(false);
+          menuIcon.click();
+          expect(menu.classList.contains('menu-hidden')).toBe(true);
 
         });
 
@@ -92,9 +91,9 @@ $(function () {
          * a single .entry element within the .feed container.
          */
 
-        it(' have at least one feed in the container', function (done) {
-           const container = document.querySelector('.feed').innerHTML;
-           expect(container).not.toBe('');
+        it(' have at least one entry in the feed container', function (done) {
+           const entry = document.querySelectorAll('.entry');
+           expect(entry.length).toBeGreaterThan(0);
            done();
 
         });
