@@ -92,8 +92,7 @@ $(function () {
          */
 
         it(' have at least one entry in the feed container', function (done) {
-           const entry = document.querySelectorAll('.entry');
-           expect(entry.length).toBeGreaterThan(0);
+           expect($('.feed .entry').length).toBeGreaterThan(0);
            done();
 
         });
