@@ -50,30 +50,23 @@ $(function () {
         /* a test that ensures the menu element is
          * hidden by default.
           */
-        const menu = document.getElementsByTagName('body')[0];
-
 
         it(' element is hidden by default', function () {
-            expect(menu.classList.contains('menu-hidden')).toBe(true);
-
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
-
-
 
          /* a test that ensures the menu changes
           * visibility when the menu icon is clicked.
           */
 
         it(' changes visibility', function () {
-          const menuIcon = document.querySelector('.menu-icon-link');
-          menuIcon.click();
-          expect(menu.classList.contains('menu-hidden')).toBe(false);
-          menuIcon.click();
-          expect(menu.classList.contains('menu-hidden')).toBe(true);
-
+          $('.menu-icon-link').click();
+          expect($('body').hasClass('menu-hidden')).toBe(false);
+          $('.menu-icon-link').click();
+          expect($('body').hasClass('menu-hidden')).toBe(true);
         });
+      });
 
-    });
 
 
     /* a test suite named "Initial Entries" */
